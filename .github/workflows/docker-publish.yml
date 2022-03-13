@@ -9,14 +9,13 @@ on:
 
 env:
   IMAGE_ID: ghcr.io/${{ github.repository_owner }}/cloudrun-go
-  LATEST_VERSION: 1.16
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [1.16, 1.17, 1.18]
+        version: [1.17, 1.18]
     steps:
       - uses: actions/checkout@v2
 
@@ -29,7 +28,7 @@ jobs:
 
     strategy:
       matrix:
-        version: [1.16, 1.17, 1.18]
+        version: [1.17, 1.18]
     steps:
       - uses: actions/checkout@v2
 
@@ -43,21 +42,3 @@ jobs:
         run: |
           echo Version=${{ matrix.version }}
           docker push $IMAGE_ID:${{ matrix.version }}
-  push_latest:
-    # 最後にpushしたものがpackageのサイトのサンプルになるようなので、最後に実行するようにする
-    needs: push_version_latest
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push'
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Build image
-        run: |
-          docker build . --file $LATEST_VERSION/Dockerfile --tag $IMAGE_ID:latest
-      - name: Log into GitHub Container Registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
-
-      - name: Push image to GitHub Container Registry
-        run: |
-          docker push $IMAGE_ID:latest
