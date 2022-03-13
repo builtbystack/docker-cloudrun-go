@@ -32,7 +32,6 @@ RUN set -eux && \
     go install golang.org/x/tools/cmd/goimports@latest && \
     go install github.com/Yamashou/gqlgenc@v0.0.5 && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
-    go install github.com/sachaos/xerrchk/cmd/xerrchk@latest && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@latest && \
     go install github.com/google/ko@latest && \
     go install github.com/sonatard/runenv@latest && \
