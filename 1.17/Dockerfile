@@ -28,18 +28,16 @@ RUN set -eux && \
 	mkdir ${GOPATH} && \
     \
     # 各種ツール
-    cd $(mktemp -d); go mod init tmp; go get golang.org/x/tools/cmd/goimports; cd - && \
     cd $(mktemp -d); go mod init tmp; go get mvdan.cc/gofumpt/gofumports@v0.1.1; cd - && \
-    cd $(mktemp -d); go mod init tmp; go get mvdan.cc/sh/v3/cmd/shfmt; cd - && \
-    go get -u github.com/sachaos/xerrchk/cmd/xerrchk && \
+    go install golang.org/x/tools/cmd/goimports@latest && \
+    go install github.com/Yamashou/gqlgenc@v0.0.5 && \
+    go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
+    go install github.com/sachaos/xerrchk/cmd/xerrchk@latest && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@latest && \
     go install github.com/google/ko@latest && \
     go install github.com/sonatard/runenv@latest && \
     curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin $GOLANGCI_LINT_VERSION && \
+    rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
     \
     # Artifact RegistryにPushするための認証設定
-    gcloud auth configure-docker asia-northeast1-docker.pkg.dev && \
-    \
-    rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
-    # ここで入れるのは、modulesのcacheを消してしまうと、参照したいテンプレートファイルがなくなってしまって正しく動作しないため、cache消去後に入れている
-    cd $(mktemp -d); go mod init tmp; go get -u github.com/Yamashou/gqlgenc@v0.0.2-gql; cd -
+    gcloud auth configure-docker asia-northeast1-docker.pkg.dev
