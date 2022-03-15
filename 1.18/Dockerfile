@@ -35,7 +35,8 @@ RUN set -eux && \
     go install github.com/Yamashou/gqlgenc@v0.0.5 && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@latest && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
-    go install github.com/google/ko@latest && \
+    # v0.10.0がGo 1.18だとエラーなので修正されているmainブランチを使う
+    go install github.com/google/ko@main && \
     go install github.com/sonatard/runenv@latest && \
     rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
     \
