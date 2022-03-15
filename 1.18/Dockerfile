@@ -1,7 +1,7 @@
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk:slim
 
-ARG GOLANG_VERSION=1.18rc1
-ARG GOLANG_DOWNLOAD_SHA256=9ea4e6adee711e06fa95546e1a9629b63de3aaae85fac9dc752fb533f3e5be23
+ARG GOLANG_VERSION=1.18
+ARG GOLANG_DOWNLOAD_SHA256=e85278e98f57cdb150fe8409e6e5df5343ecb13cebf03a5d5ff12bd55a80264f
 
 ARG GOLANGCI_LINT_VERSION=v1.43.0
 
@@ -31,12 +31,12 @@ RUN set -eux && \
     go install golang.org/x/tools/cmd/goimports@latest && \
     go install mvdan.cc/gofumpt@latest && \
     go install github.com/daixiang0/gci@latest && \
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@$GOLANGCI_LINT_VERSION && \
     go install github.com/Yamashou/gqlgenc@v0.0.5 && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@latest && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
     go install github.com/google/ko@latest && \
     go install github.com/sonatard/runenv@latest && \
-    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin $GOLANGCI_LINT_VERSION && \
     rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
     \
     # Artifact RegistryにPushするための認証設定
