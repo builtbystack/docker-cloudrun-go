@@ -3,8 +3,6 @@ FROM gcr.io/google.com/cloudsdktool/cloud-sdk:slim
 ARG GOLANG_VERSION=1.17.8
 ARG GOLANG_DOWNLOAD_SHA256=980e65a863377e69fd9b67df9d8395fd8e93858e7a24c9f55803421e453f4f99
 
-ARG GOLANGCI_LINT_VERSION=v1.45.0
-
 ARG GOPATH=/go
 ENV GOPATH=${GOPATH} \
 	PATH=/go/bin:/usr/local/go/bin:$PATH
@@ -31,8 +29,8 @@ RUN set -eux && \
     go install golang.org/x/tools/cmd/goimports@latest && \
     go install mvdan.cc/gofumpt@latest && \
     go install github.com/daixiang0/gci@latest && \
-    go install github.com/golangci/golangci-lint/cmd/golangci-lint@$GOLANGCI_LINT_VERSION && \
-    go install github.com/Yamashou/gqlgenc@v0.0.5 && \
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.45.0 && \
+    go install github.com/Yamashou/gqlgenc@v0.0.6 && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@latest && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
     go install github.com/google/ko@latest && \
