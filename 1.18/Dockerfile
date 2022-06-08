@@ -35,6 +35,7 @@ RUN set -eux && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
     go install github.com/google/ko@latest && \
     go install github.com/sonatard/runenv@latest && \
+    go get github.com/appify-technologies/appify-server/platform/application/repository@v0.0.0-00010101000000-000000000000 && \
     rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
     \
     # Artifact RegistryにPushするための認証設定
