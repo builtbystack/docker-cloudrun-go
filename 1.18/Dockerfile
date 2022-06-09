@@ -7,6 +7,7 @@ ARG GOPATH=/go
 ENV GOPATH=${GOPATH} \
 	PATH=/go/bin:/usr/local/go/bin:$PATH
 
+
 RUN set -eux && \
     # 基本ツール
 	apt-get update && \
