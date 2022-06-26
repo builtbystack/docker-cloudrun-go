@@ -7,7 +7,6 @@ ARG GOPATH=/go
 ENV GOPATH=${GOPATH} \
 	PATH=/go/bin:/usr/local/go/bin:$PATH
 
-
 RUN set -eux && \
     # 基本ツール
 	apt-get update && \
@@ -37,6 +36,8 @@ RUN set -eux && \
     go install github.com/google/ko@latest && \
     go install github.com/sonatard/runenv@latest && \
     rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
+    # gqlgencがgqlgen@v0.17.2のmodelgenのtemplateに依存しているため${GOPATH}/pkg削除後に必要
+    go install github.com/99designs/gqlgen@v0.17.2 && \
     \
     # Artifact RegistryにPushするための認証設定
     gcloud auth configure-docker asia-northeast1-docker.pkg.dev
