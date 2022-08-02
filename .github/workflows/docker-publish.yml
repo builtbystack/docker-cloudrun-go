@@ -15,20 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [1.18]
+        version: [1.18, 20220802]
     steps:
       - uses: actions/checkout@v2
 
       - name: Run test
         run: docker build . --file ${{ matrix.version }}/Dockerfile --tag $IMAGE_ID:${{ matrix.version }}
-  push_version_latest:
+  push:
     needs: test
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
 
     strategy:
       matrix:
-        version: [1.18]
+        version: [1.18, 20220802]
     steps:
       - uses: actions/checkout@v2
 
