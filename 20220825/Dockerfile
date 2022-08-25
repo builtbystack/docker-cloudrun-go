@@ -1,7 +1,7 @@
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk:slim
 
-ARG GOLANG_VERSION=1.18
-ARG GOLANG_DOWNLOAD_SHA256=e85278e98f57cdb150fe8409e6e5df5343ecb13cebf03a5d5ff12bd55a80264f
+ARG GOLANG_VERSION=1.19
+ARG GOLANG_DOWNLOAD_SHA256=464b6b66591f6cf055bc5df90a9750bf5fbc9d038722bb84a9d56a2bea974be6
 
 ARG GOPATH=/go
 ENV GOPATH=${GOPATH} \
@@ -29,11 +29,11 @@ RUN set -eux && \
     go install golang.org/x/tools/cmd/goimports@latest && \
     go install mvdan.cc/gofumpt@latest && \
     go install github.com/daixiang0/gci@latest && \
-    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.45.0 && \
-    go install github.com/Yamashou/gqlgenc@v0.0.7 && \
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.49.0 && \
+    go install github.com/Yamashou/gqlgenc@v0.0.9 && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@latest && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
-    go install github.com/google/ko@latest && \
+    go install github.com/google/ko@v0.12.0 && \
     go install github.com/sonatard/runenv@latest && \
     rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
     \
