@@ -29,11 +29,12 @@ RUN set -eux && \
     go install golang.org/x/tools/cmd/goimports@latest && \
     go install mvdan.cc/gofumpt@latest && \
     go install github.com/daixiang0/gci@latest && \
-    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.47.3 && \
-    go install github.com/Yamashou/gqlgenc@v0.0.7 && \
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.49.0 && \
+    go install github.com/Yamashou/gqlgenc@v0.0.9 && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@latest && \
+    go install github.com/gqlgo/deprecatedquery/cmd/deprecatedquery@latest && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
-    go install github.com/google/ko@latest && \
+    go install github.com/google/ko@v0.12.0 && \
     go install github.com/sonatard/runenv@latest && \
     rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
     \
