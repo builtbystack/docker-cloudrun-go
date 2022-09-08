@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [20220902, 20220906]
+        version: [20220906, 20220908]
     steps:
       - uses: actions/checkout@v2
 
@@ -28,7 +28,7 @@ jobs:
 
     strategy:
       matrix:
-        version: [20220902, 20220906]
+        version: [20220906, 20220908]
     steps:
       - uses: actions/checkout@v2
 
