@@ -34,6 +34,8 @@ RUN set -eux && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@v1.0.1 && \
     go install github.com/gqlgo/deprecatedquery/cmd/deprecatedquery@v0.0.3 && \
     go install github.com/gqlgo/optionalschema/cmd/optionalschema@v0.0.2 && \
+    go install github.com/gqlgo/operationname/cmd/operationname@v0.0.1 && \
+    go install github.com/gqlgo/iddirective/cmd/iddirective@v0.0.1 && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
     go install github.com/google/ko@v0.12.0 && \
     go install github.com/sonatard/runenv@latest && \
