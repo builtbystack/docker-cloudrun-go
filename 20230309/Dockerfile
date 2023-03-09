@@ -1,7 +1,7 @@
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk:slim
 
-ARG GOLANG_VERSION=1.19.1
-ARG GOLANG_DOWNLOAD_SHA256=acc512fbab4f716a8f97a8b3fbaa9ddd39606a28be6c2515ef7c6c6311acffde
+ARG GOLANG_VERSION=1.20.2
+ARG GOLANG_DOWNLOAD_SHA256=4eaea32f59cde4dc635fbc42161031d13e1c780b87097f4b4234cfce671f1768
 
 ARG GOPATH=/go
 ENV GOPATH=${GOPATH} \
@@ -29,12 +29,13 @@ RUN set -eux && \
     go install golang.org/x/tools/cmd/goimports@latest && \
     go install mvdan.cc/gofumpt@latest && \
     go install github.com/daixiang0/gci@latest && \
-    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.49.0 && \
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.51.2 && \
     go install github.com/Yamashou/gqlgenc@v0.11.1 && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@v1.0.1 && \
     go install github.com/gqlgo/deprecatedquery/cmd/deprecatedquery@v0.0.3 && \
     go install github.com/gqlgo/optionalschema/cmd/optionalschema@v0.0.2 && \
     go install github.com/gqlgo/operationname/cmd/operationname@v0.0.1 && \
+    go install github.com/gqlgo/iddirective/cmd/iddirective@v0.0.1 && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
     go install github.com/google/ko@v0.12.0 && \
     go install github.com/sonatard/runenv@latest && \
