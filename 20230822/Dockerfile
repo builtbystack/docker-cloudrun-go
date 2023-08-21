@@ -1,7 +1,7 @@
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk:slim
 
-ARG GOLANG_VERSION=1.20.2
-ARG GOLANG_DOWNLOAD_SHA256=4eaea32f59cde4dc635fbc42161031d13e1c780b87097f4b4234cfce671f1768
+ARG GOLANG_VERSION=1.21.0
+ARG GOLANG_DOWNLOAD_SHA256=d0398903a16ba2232b389fb31032ddf57cac34efda306a0eebac34f0965a0742
 
 ARG GOPATH=/go
 ENV GOPATH=${GOPATH} \
@@ -30,7 +30,7 @@ RUN set -eux && \
     go install mvdan.cc/gofumpt@latest && \
     go install github.com/daixiang0/gci@latest && \
     go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.51.2 && \
-    go install github.com/Yamashou/gqlgenc@v0.11.1 && \
+    go install github.com/Yamashou/gqlgenc@v0.13.5 && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@v1.0.1 && \
     go install github.com/gqlgo/deprecatedquery/cmd/deprecatedquery@v0.0.3 && \
     go install github.com/gqlgo/optionalschema/cmd/optionalschema@v0.0.2 && \
