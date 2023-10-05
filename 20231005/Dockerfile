@@ -40,6 +40,7 @@ RUN set -eux && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
     go install github.com/google/ko@v0.12.0 && \
     go install github.com/sonatard/runenv@latest && \
+    go install github.com/gqlgo/get-graphql-schema@latest && \
     rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
     \
     # Artifact RegistryにPushするための認証設定
