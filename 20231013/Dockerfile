@@ -29,7 +29,7 @@ RUN set -eux && \
     go install golang.org/x/tools/cmd/goimports@latest && \
     go install mvdan.cc/gofumpt@latest && \
     go install github.com/daixiang0/gci@latest && \
-    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.51.2 && \
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.54.2 && \
     go install github.com/Yamashou/gqlgenc@v0.15.1 && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@v1.0.1 && \
     go install github.com/gqlgo/deprecatedquery/cmd/deprecatedquery@v0.0.3 && \
