@@ -41,7 +41,6 @@ RUN set -eux && \
     go install github.com/google/yamlfmt/cmd/yamlfmt@latest && \
     go install github.com/google/ko@v0.12.0 && \
     go install github.com/sonatard/runenv@latest && \
-    go install github.com/sonatard/runenv@latest && \
     rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
     \
     # Artifact RegistryにPushするための認証設定
