@@ -38,6 +38,8 @@ RUN set -eux && \
     go install github.com/gqlgo/iddirective/cmd/iddirective@v0.0.1 && \
     go install github.com/builtbystack/nopermission/cmd/nopermission@v0.0.2 && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
+    go install github.com/google/yamlfmt/cmd/yamlfmt@latest && \
+    go install github.com/gqlgo/gqlfmt@latest && \
     go install github.com/google/ko@v0.12.0 && \
     go install github.com/sonatard/runenv@latest && \
     rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
