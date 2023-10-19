@@ -15,8 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # TODO 20231018と20231019が1日違いのため、念のため3つにしているが次の段階では2つに戻す
-        version: [20231013, 20231018, 20231019]
+        version: [20231018, 20231019]
     steps:
       - uses: actions/checkout@v3
 
@@ -29,8 +28,7 @@ jobs:
 
     strategy:
       matrix:
-        # TODO 20231018と20231019が1日違いのため、念のため3つにしているが次の段階では2つに戻す
-        version: [20231013, 20231018, 20231019]
+        version: [20231018, 20231019]
     steps:
       - uses: actions/checkout@v3
 
