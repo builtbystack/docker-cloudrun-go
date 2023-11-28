@@ -30,6 +30,7 @@ RUN set -eux && \
     go install mvdan.cc/gofumpt@latest && \
     go install github.com/daixiang0/gci@latest && \
     go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.54.2 && \
+    go install github.com/99designs/gqlgen@v0.17.40 && \
     go install github.com/Yamashou/gqlgenc@v0.16.0 && \
     go install github.com/gqlgo/nodecheck/cmd/nodecheck@v1.0.1 && \
     go install github.com/gqlgo/deprecatedquery/cmd/deprecatedquery@v0.0.3 && \
@@ -37,6 +38,7 @@ RUN set -eux && \
     go install github.com/gqlgo/operationname/cmd/operationname@v0.0.1 && \
     go install github.com/gqlgo/iddirective/cmd/iddirective@v0.0.1 && \
     go install github.com/builtbystack/nopermission/cmd/nopermission@v0.0.2 && \
+    go install github.com/daichirata/hammer@latest && \
     go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
     go install github.com/google/yamlfmt/cmd/yamlfmt@latest && \
     go install github.com/google/ko@v0.12.0 && \
