@@ -25,25 +25,5 @@ RUN set -eux && \
 	rm go.tgz && \
 	mkdir ${GOPATH} && \
     \
-    # 各種ツール
-    go install golang.org/x/tools/cmd/goimports@latest && \
-    go install golang.org/x/tools/cmd/deadcode@latest && \
-    go install mvdan.cc/gofumpt@latest && \
-    go install github.com/daixiang0/gci@latest && \
-    go install github.com/99designs/gqlgen@v0.17.43 && \
-    go install github.com/Yamashou/gqlgenc@v0.18.1 && \
-    go install github.com/gqlgo/nodecheck/cmd/nodecheck@v1.0.1 && \
-    go install github.com/gqlgo/deprecatedquery/cmd/deprecatedquery@v0.0.3 && \
-    go install github.com/gqlgo/optionalschema/cmd/optionalschema@v0.0.2 && \
-    go install github.com/gqlgo/operationname/cmd/operationname@v0.0.1 && \
-    go install github.com/gqlgo/iddirective/cmd/iddirective@v0.0.1 && \
-    go install github.com/builtbystack/nopermission/cmd/nopermission@v0.0.2 && \
-    go install github.com/daichirata/hammer@latest && \
-    go install mvdan.cc/sh/v3/cmd/shfmt@latest && \
-    go install github.com/google/yamlfmt/cmd/yamlfmt@latest && \
-    go install github.com/google/ko@v0.12.0 && \
-    go install github.com/sonatard/runenv@latest && \
-    rm -rf ${GOPATH}/src ${GOPATH}/pkg && \
-    \
     # Artifact RegistryにPushするための認証設定
     gcloud auth configure-docker asia-northeast1-docker.pkg.dev
